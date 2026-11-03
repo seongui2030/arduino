@@ -22,6 +22,17 @@
   * **경로 설정:** 경로를 `D:\arduin` (또는 폴더를 미리 생성하신 뒤 해당 폴더 경로)로 지정합니다.
   * **저장 및 확인:** 설정 창 우측 하단의 **[확인]** 버튼을 눌러 저장합니다.
   * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `D:\arduin` 폴더 안에 저장됩니다.
+* **🔌 Blink 예제 실행 순서**
+  * **아두이노 보드 연결:** 아두이노 우노(Arduino Uno) 보드를 USB 케이블을 통해 컴퓨터의 USB 포트에 연결합니다.
+  * **아두이노 IDE 실행 및 포트/보드 설정:**
+    * [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 프로그램을 실행합니다.
+    * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
+    * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
+  * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
+  * **코드 컴파일(확인) 및 업로드:**
+    * 코드 창 좌측 상단의 **[✔️ (확인/컴파일)]** 버튼을 눌러 에러가 없는지 확인합니다.
+    * 바로 옆의 **[➡️ (업로드)]** 버튼을 눌러 아두이노 보드에 프로그램을 전송합니다.
+  * **동작 확인:** 업로드가 완료되면 아두이노 보드에 있는 `L` 이라고 적힌 내장 LED가 1초 간격으로 켜지고 꺼지며 깜빡이는 것을 확인할 수 있습니다.
 * **[git bash](https://git-scm.com/install/windows)** >> "Git for Windows/x64 Setup"
 * **[VSCode](https://code.visualstudio.com/docs/setup/windows)** >> "Download the Visual Studio Code User setup for Windows."
 
