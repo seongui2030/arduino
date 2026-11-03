@@ -6,22 +6,12 @@
 
 ## 👥 팀 구성 및 역할 분담 (총 10명 + 지도교사 1명)
 * **총괄 및 기술 지도:** 지도교사 (1명)
-* **팀별 인원:** 총 3개 팀 (각 팀당 3~4명 구성)
-
+* **팀별 인원:** 총 3개 팀 (각 팀당 2명 구성)
 ---
 ## 👥 준비물 다운로드 및 설치
 * **[아두이노](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR)** >>"Arduino IDE Installer"
-* **[아두이노IDE] >> 툴 >> 보드:"Arduino Uno" , 포트: "COM? (Arduino Uno)"** >> [확인] >> [업로드]]
-* **[아두이노 우노] 보드를 케이블로 컴퓨터 USB 포트에 연결하기**
 * [장치 관리자] >> 포트[COM & LPT] >> [USB 직렬장치(COM?)]**
-* **🛠️ 아두이노 IDE 스케치 기본 위치 변경 방법**
-  * **아두이노 IDE 실행:** 컴퓨터에서 [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 프로그램을 실행합니다.
-  * **환경 설정 메뉴 진입:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[기본 설정 (Preferences)]**을 클릭합니다. (단축키: `Ctrl + ,`)
-  * **스케치북 위치(Sketchbook location) 변경:** 설정 창 상단 부근에 "스케치북 위치 (Sketchbook location):" 항목이 있습니다.
-  * **경로 지정:** 오른쪽의 **[찾아보기 (Browse)]** 버튼을 누르거나, 입력창에 직접 경로를 입력합니다.
-  * **경로 설정:** 경로를 `D:\arduin` (또는 폴더를 미리 생성하신 뒤 해당 폴더 경로)로 지정합니다.
-  * **저장 및 확인:** 설정 창 우측 하단의 **[확인]** 버튼을 눌러 저장합니다.
-  * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `D:\arduin` 폴더 안에 저장됩니다.
+
 * **🔌 Blink 예제 실행 순서**
   * **아두이노 보드 연결:** 아두이노 우노(Arduino Uno) 보드를 USB 케이블을 통해 컴퓨터의 USB 포트에 연결합니다.
   * **아두이노 IDE 실행 및 포트/보드 설정:**
@@ -33,6 +23,15 @@
     * 코드 창 좌측 상단의 **[✔️ (확인/컴파일)]** 버튼을 눌러 에러가 없는지 확인합니다.
     * 바로 옆의 **[➡️ (업로드)]** 버튼을 눌러 아두이노 보드에 프로그램을 전송합니다.
   * **동작 확인:** 업로드가 완료되면 아두이노 보드에 있는 `L` 이라고 적힌 내장 LED가 1초 간격으로 켜지고 꺼지며 깜빡이는 것을 확인할 수 있습니다.
+* **🛠️ 아두이노 IDE 스케치 기본 위치(C:\Users\User\Desktop\Arduino) 변경 방법**
+  * **아두이노 IDE 실행:** 컴퓨터에서 [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 프로그램을 실행합니다.
+  * **환경 설정 메뉴 진입:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[환경 설정]**을 클릭합니다. (단축키: `Ctrl + ,`)
+  * **스케치북 위치(Sketchbook location) 변경:** 설정 창 상단 부근에 "스케치북 위치 (Sketchbook location):" 항목이 있습니다.
+  * **경로 지정:** 오른쪽의 **[찾아보기 (Browse)]** 버튼을 누르거나, 입력창에 직접 경로를 입력합니다.
+  * **경로 설정:** 경로를 `C:\Users\User\Desktop\Arduino` (또는 폴더를 미리 생성하신 뒤 해당 폴더 경로)로 지정합니다.
+  * **저장 및 확인:** 설정 창 우측 하단의 **[확인]** 버튼을 눌러 저장합니다.
+  * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `C:\Users\User\Desktop\Arduino` 폴더 안에 저장됩니다.
+
 * **[git bash](https://git-scm.com/install/windows)** >> "Git for Windows/x64 Setup"
 * **[VSCode](https://code.visualstudio.com/docs/setup/windows)** >> "Download the Visual Studio Code User setup for Windows."
 
