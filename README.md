@@ -9,6 +9,12 @@
 * **팀별 인원:** 총 3개 팀 (각 팀당 3~4명 구성)
 
 ---
+## 👥 준비물 다운로드 및 설치
+* **[아두이노](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR)**
+* **[git bash](https://git-scm.com/install/windows)** >> "Git for Windows/x64 Setup"
+* **[VSCode](https://code.visualstudio.com/docs/setup/windows)** >> "Download the Visual Studio Code User setup for Windows."
+
+---
 
 ## 🚀 프로젝트 주제 TOP 3 및 팀별 배정 부품
 
