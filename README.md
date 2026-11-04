@@ -386,6 +386,7 @@ void displayNumber(int num) {
 ---
 
 ### 2. 📊 시스템 동작 흐름도 (Mermaid Flowchart)
+<!--
 ```mermaid
 flowchart TD
     A[시작: 아두이노 전원 켜짐] --> B{현재 시간이 10분 ~ 20분 사이인가?}
@@ -402,7 +403,7 @@ flowchart TD
     J -- 예 --> K[종료 알림음 후 타이머 초기화]
     K --> B
 ```
-
+-->
 ---
 ![시스템 동작 흐름도](./assets/timer.drawio.png)
 ---
