@@ -163,7 +163,90 @@ void setColor(int red, int green, int blue) {
   * 빨강·초록 LED 각 1개
   * 피에조 부저 1개
   * 브레드보드 및 점퍼 케이블
+---
+## 🔌 [팀 2] 안전거리 확보! 복도 및 계단 충돌 방지 경보기 회로 연결 다이어그램 (핀 배치 가이드)
 
+* **HC-SR04 초음파 거리 센서 (4핀)**
+  * VCC 핀 $\rightarrow$ **5V**
+  * Trig 핀 $\rightarrow$ 아두이노 디지털 **Pin 9**
+  * Echo 핀 $\rightarrow$ 아두이노 디지털 **Pin 10**
+  * GND 핀 $\rightarrow$ **GND**
+
+* **초록 LED (안전 거리 유지 중)**
+  * 긴 다리(+) $\rightarrow$ 아두이노 디지털 **Pin 3** (보호 저항 220Ω~330Ω 연결 필수)
+  * 짧다리(-) $\rightarrow$ **GND**
+
+* **빨강 LED (20cm 이내 근접 경고)**
+  * 긴 다리(+) $\rightarrow$ 아두이노 디지털 **Pin 4** (보호 저항 220Ω~330Ω 연결 필수)
+  * 짧다리(-) $\rightarrow$ **GND**
+
+* **피에조 부저**
+  * (+) 긴 다리 $\rightarrow$ 아두이노 디지털 **Pin 8**
+  * (-) 짧은 다리 $\rightarrow$ **GND**
+
+---
+
+## 💻 [팀 2] 안전거리 확보! 복도 및 계단 충돌 방지 경보기 아두이노 스케치 코드
+
+```cpp
+// [팀 2] "안전거리 확보!" 복도 및 계단 충돌 방지 경보기
+// 난간 20cm 이내 근접 시 경고음 및 빨간색 LED 작동 코드
+
+// 1. 핀 설정
+const int trigPin = 9;       // 초음파 센서 Trig (D9)
+const int echoPin = 10;      // 초음파 센서 Echo (D10)
+const int greenLedPin = 3;   // 초록 LED (D3) - 안전
+const int redLedPin = 4;     // 빨강 LED (D4) - 경고 (20cm 이내)
+const int buzzerPin = 8;     // 피에조 부저 (D8)
+
+// 2. 거리 기준 설정 (단위: cm)
+const int safeDistance = 20; // 20cm 이내 접근 시 경고 발생
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(greenLedPin, OUTPUT);
+  pinMode(redLedPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  
+  Serial.begin(9600); // 디버깅 및 거리 확인용 시리얼 통신 시작
+}
+
+void loop() {
+  // 초음파 발사 및 반사 시간 측정
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // echoPin이 HIGH였던 시간을 측정하여 거리(cm)로 환산
+  long duration = pulseIn(echoPin, HIGH);
+  long distance = duration * 0.034 / 2; 
+  
+  // 시리얼 모니터로 현재 측정 거리 출력
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+  
+  // 20cm 이내로 난간 또는 장애물에 근접한 경우
+  if (distance > 0 && distance <= safeDistance) {
+    digitalWrite(greenLedPin, LOW);  // 초록 LED 끄기
+    digitalWrite(redLedPin, HIGH);   // 빨강 LED 켜기
+    
+    // 경고음 발생 (피에조 부저)
+    tone(buzzerPin, 1200, 150);      // 1200Hz로 0.15초 동안 울림
+  } 
+  // 20cm보다 멀리 떨어져 안전한 경우
+  else {
+    digitalWrite(greenLedPin, HIGH); // 초록 LED 켜기
+    digitalWrite(redLedPin, LOW);    // 빨강 LED 끄기
+    noTone(buzzerPin);               // 부저 멈춤
+  }
+  
+  delay(100); // 안정적인 센서 측정을 위한 0.1초 대기
+}
+---
 ### [팀 3] "쉬는 시간 늦지 않아요!" 이동수업 마감 타이머
 * **주제 배경:** 쉬는 시간이 끝나갈 때 남은 시간을 직관적으로 보여주어 지각을 방지하는 카운트다운 타이머
 * **주요 부품:** 
