@@ -261,7 +261,7 @@ void loop() {
 
 ---
 ## 🔌 [팀 3] (RTC 연동형) 쉬는 시간 마감 타이머 회로 연결 다이어그램 (핀 배치 가이드)
-
+* **[DS3231 RTC 모듈 (I2C 통신)]**[구입처_메카솔루션](https://www.mechasolution.com/goods/goods_view.php?goodsNo=566721)
 * **DS3231 RTC 모듈 (I2C 통신)**
   * VCC $\rightarrow$ **5V**
   * GND $\rightarrow$ **GND**
