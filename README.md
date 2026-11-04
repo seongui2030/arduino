@@ -22,33 +22,12 @@
     ```powershell
     git clone https://github.com/seongui2030/arduino.git
     ```
-  * **폴더 진입:** 클론이 완료되면 생성된 `arduino` 폴더로 이동하여 작업을 시작합니다.
-    ```powershell
-    cd arduino
-    ```
-* **[아두이노](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR)** >>"Arduino IDE Installer"
-* [장치 관리자] >> 포트[COM & LPT] >> [USB 직렬장치(COM?)]**
+---
 
-* **🔌 Blink 예제 실행 순서**
-  * **아두이노 보드 연결:** 아두이노 우노(Arduino Uno) 보드를 USB 케이블을 통해 컴퓨터의 USB 포트에 연결합니다.
-  * **아두이노 IDE 실행 및 포트/보드 설정:**
-    * [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 에서 [다운로드] 클릭하여 프로그램을 내려받기 합니다.
-    * 다운로드 폴더에서 내려받은 설치 프로그램 파일 ( 'Arduino IDE Installer.exe')로 설치를 진행합니다.
-    * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
-    * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
-  * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
-  * **코드 컴파일(확인) 및 업로드:**
-    * 코드 창 좌측 상단의 **[✔️ (확인/컴파일)]** 버튼을 눌러 에러가 없는지 확인합니다.
-    * 바로 옆의 **[➡️ (업로드)]** 버튼을 눌러 아두이노 보드에 프로그램을 전송합니다.
-  * **동작 확인:** 업로드가 완료되면 아두이노 보드에 있는 `L` 이라고 적힌 내장 LED가 1초 간격으로 켜지고 꺼지며 깜빡이는 것을 확인할 수 있습니다.
-* **🛠️ 아두이노 IDE 스케치 기본 위치(C:\Users\User\Desktop\Arduino) 변경 방법**
-  * **아두이노 IDE 실행:** 컴퓨터에서 [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 프로그램을 실행합니다.
-  * **환경 설정 메뉴 진입:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[환경 설정]**을 클릭합니다. (단축키: `Ctrl + ,`)
-  * **스케치북 위치(Sketchbook location) 변경:** 설정 창 상단 부근에 "스케치북 위치 (Sketchbook location):" 항목이 있습니다.
-  * **경로 지정:** 오른쪽의 **[찾아보기 (Browse)]** 버튼을 누르거나, 입력창에 직접 경로를 입력합니다.
-  * **경로 설정:** 경로를 `C:\Users\User\Desktop\Arduino` (또는 폴더를 미리 생성하신 뒤 해당 폴더 경로)로 지정합니다.
-  * **저장 및 확인:** 설정 창 우측 하단의 **[확인]** 버튼을 눌러 저장합니다.
-  * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `C:\Users\User\Desktop\Arduino` 폴더 안에 저장됩니다.
+* **🔌아두이노 IDE 다운로드 및 설치:**
+     * **아두이노 IDE 다운로드:** [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 에서 [다운로드] 클릭하여 프로그램을 내려받기 합니다.
+     * **아두이노 설치:** 다운로드 폴더에서 내려받은 설치 프로그램 파일 ( 'Arduino IDE Installer.exe')를 더블클릭하여 설치를 진행합니다.
+
 * **💻 시작 메뉴에서 아두이노 IDE 실행 순서**
   * **시작 메뉴 열기:** 키보드의 **[Windows (윈도우)]** 키를 누르거나, 화면 아래 작업표시줄에 있는 **[시작(Windows 아이콘)]** 버튼을 클릭합니다.
   * **프로그램 검색:** 검색창에 **`Arduino IDE`**를 입력하거나 앱 목록에서 **[Arduino IDE]**를 찾습니다.
@@ -56,7 +35,13 @@
   * **프로젝트 폴더 열기:** 
     * 아두이노 IDE가 실행되면 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[폴더 열기 (Open...)]**를 클릭합니다.
     * 바탕화면 또는 작업 중인 경로에 있는 **`arduino`** 폴더(`C:\Users\User\Desktop\arduino`)를 선택하여 엽니다.
-
+    * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
+    * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
+  * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
+  * **코드 컴파일(확인) 및 업로드:**
+    * 코드 창 좌측 상단의 **[✔️ (확인/컴파일)]** 버튼을 눌러 에러가 없는지 확인합니다.
+    * 바로 옆의 **[➡️ (업로드)]** 버튼을 눌러 아두이노 보드에 프로그램을 전송합니다.
+  * **동작 확인:** 업로드가 완료되면 아두이노 보드에 있는 `L` 이라고 적힌 내장 LED가 1초 간격으로 켜지고 꺼지며 깜빡이는 것을 확인할 수 있습니다.
 ---
 
 ## 🚀 프로젝트 주제 TOP 3 및 팀별 배정 부품
