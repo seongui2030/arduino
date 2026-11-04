@@ -33,18 +33,18 @@
 ---
 
 * **🔌아두이노 IDE 다운로드 및 설치:**
-     * **아두이노 IDE 다**로드:** [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 에서 **[다운로드]** 를 클릭하여 프로그램을 내려받기 합니다.
+     * **아두이노 IDE 다운로드:** [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 에서 **[다운로드]** 를 클릭하여 프로그램을 내려받기 합니다.
      * **아두이노 설치:** 다운로드 폴더에서 내려받은 설치 프로그램 파일 ( 'Arduino IDE Installer.exe')를 더블클릭하여 설치를 진행합니다.
 
 * **💻 시작 메뉴에서 아두이노 IDE 실행 순서**
   * **시작 메뉴 열기:** 키보드의 **[Windows (윈도우)]** 키를 누르거나, 화면 아래 작업표시줄에 있는 **[시작(Windows 아이콘)]** 버튼을 클릭합니다.
-  * **프로그램 검색:** 검색창에 **`Arduino IDE`**를 입력하거나 앱 목록에서 **[Arduino IDE]**를 찾습니다.
+  * **프로그램 검색:** 검색창에 **`Arduino IDE`**를 입력하거나 앱 목록에서 **[Arduino IDE]** 를 찾습니다.
   * **실행하기:** **Arduino IDE** 앱 아이콘을 클릭하여 프로그램을 실행합니다.
   * **프로젝트 폴더 열기:** 
     * 아두이노 IDE가 실행되면 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[기본 설정...]** 를 클릭합니다.
     * **스케치북 위치:** **[검색]** 버튼을 눌러 바탕화면에 있는 **`arduino`** 폴더(`C:\Users\User\Desktop\arduino`)를 선택 후 **[확인]** 버튼을 클릭 합니다.
     * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
-    * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
+    * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]** 에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
   * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
   * **코드 컴파일(확인) 및 업로드:**
     * 코드 창 좌측 상단의 **[✔️ (확인/컴파일)]** 버튼을 눌러 에러가 없는지 확인합니다.
