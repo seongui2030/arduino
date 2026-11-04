@@ -11,11 +11,8 @@
 ## 👥 준비물 다운로드 및 설치
 * **📥 Git for Windows 설치 및 Git Bash 실행 순서**
   * **설치 파일 다운로드:** [Git for Windows 공식 다운로드 페이지](https://git-scm.com/install/windows)에 접속하여 **[Git for Windows/x64 Setup](https://git-scm.com/download/win)** 링크를 클릭해 설치 파일을 다운로드합니다.
-  * **프로그램 설치:** 다운로드한 설치 파일(`.exe`)을 실행하고, 화면의 안내(Next)에 따라 기본 설정으로 설치를 완료합니다.
-  * **Git Bash 실행:** 
-    * 윈도우 시작 메뉴를 열고 **`Git Bash`**를 검색하여 실행합니다.
-    * 또는 바탕화면 빈 곳이나 폴더 안에서 마우스 우클릭을 한 뒤 **[Git Bash Here]**를 선택하여 바로 실행할 수도 있습니다.
-* **[git bash](https://git-scm.com/install/windows)** >> "Git for Windows/x64 Setup"
+  * **프로그램 설치:** 다운로드한 설치 파일(`Git-2.56.0.4-64-bit.exe`)을 실행하고, 화면의 안내(Next)에 따라 기본 설정으로 설치를 완료합니다.
+
 * **📥 윈도우 파워쉘(PowerShell)을 이용한 Git 클론 방법**
   * **작업 폴더 이동:** 프로젝트를 저장할 폴더로 이동합니다. (예: 바탕화면으로 이동하려면 아래 명령어 입력)
     ```powershell
