@@ -63,7 +63,76 @@
   * RGB LED (빨강·초록·파랑) 1개
   * 피에조 부저 1개
   * 브레드보드 및 점퍼 케이블
+---
+## 💻 [팀 1] 스마트 공기 질 & 온도 알리미 아두이노 스케치 코드
 
+```cpp
+// [팀 1] "교실이 답답해요!" 스마트 공기 질 & 온도 알리미 스케치 코드
+// 회로 연결 다이어그램 기준 맞춤 코드 (온도 A0, 조도 A1, RGB LED D3~D5, 부저 D8)
+
+// 1. 핀 설정
+const int tempPin = A0;      // 온도 센서 (A0)
+const int cdsPin = A1;       // 조도 센서 (A1)
+const int redPin = 3;        // RGB LED - 빨강 (D3)
+const int greenPin = 4;      // RGB LED - 초록 (D4)
+const int bluePin = 5;       // RGB LED - 파랑 (D5)
+const int buzzerPin = 8;     // 피에조 부저 (D8)
+
+// 2. 임계값 설정 (실내 환경에 맞게 조절 가능)
+const int tempThreshold = 28;  // 실내 온도 기준치 (예: 28도 이상 시 경고)
+const int lightThreshold = 300;// 조도 기준치 (숫자가 낮을수록 어두움)
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  
+  // 시리얼 통신 시작 (센서 값 모니터링용)
+  Serial.begin(9600);
+}
+
+void loop() {
+  // 센서 값 읽기
+  int rawTemp = analogRead(tempPin);
+  int rawCds = analogRead(cdsPin);
+  
+  // 아날로그 값을 온도(섭씨)로 변환 (TMP36 / LM35 센서 일반 공식 기준)
+  float voltage = rawTemp * (5.0 / 1023.0);
+  float currentTemp = voltage * 100.0; 
+  
+  // 시리얼 모니터로 현재 상태 출력
+  Serial.print("Temp: ");
+  Serial.print(currentTemp);
+  Serial.print(" C  |  Light: ");
+  Serial.println(rawCds);
+  
+  // 조건문 판단: 온도가 높거나 야간 자율학습으로 어두워진 경우
+  if (currentTemp >= tempThreshold || rawCds < lightThreshold) {
+    // 빨간색 LED 켜기 (위험/경고)
+    setColor(255, 0, 0);
+    
+    // 경고음 울리기 (피에조 부저)
+    tone(buzzerPin, 1000, 200); // 1000Hz로 0.2초 울림
+    delay(300);
+  } 
+  // 쾌적한 상태
+  else {
+    // 초록색 LED 켜기 (정상/안심)
+    setColor(0, 255, 0);
+    noTone(buzzerPin);
+  }
+  
+  delay(1000); // 1초 대기 후 반복
+}
+
+// RGB LED 색상을 제어하는 사용자 정의 함수 (공통 캐소드 기준)
+void setColor(int red, int green, int blue) {
+  analogWrite(redPin, red);
+  analogWrite(greenPin, green);
+  analogWrite(bluePin, blue);
+}
+---
 ### [팀 2] "안전거리 확보!" 복도 및 계단 충돌 방지 경보기
 * **주제 배경:** 쉬는 시간에 복도나 코너에서 뛰어다니다 발생하는 안전사고를 예방하기 위한 거리 감지 장치
 * **주요 부품:** 
