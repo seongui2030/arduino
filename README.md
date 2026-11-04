@@ -64,6 +64,28 @@
   * 피에조 부저 1개
   * 브레드보드 및 점퍼 케이블
 ---
+## 🔌 [팀 1] 스마트 공기 질 & 온도 알리미 회로 연결 다이어그램 (핀 배치 가이드)
+
+* **온도 센서 (3핀 - 아날로그 온도 센서 기준)**
+  * VCC 핀 $\rightarrow$ **5V**
+  * GND 핀 $\rightarrow$ **GND**
+  * OUT (가운데 데이터 핀) $\rightarrow$ 아날로그 **A0**
+
+* **조도 센서 (CdS + 10kΩ 저항 분압 회로)**
+  * CdS 센서 한쪽 다리 $\rightarrow$ **5V**
+  * CdS 센서 다른쪽 다리 $\rightarrow$ 아날로그 **A1** 및 10kΩ 저항 한쪽
+  * 10kΩ 저항 반대쪽 $\rightarrow$ **GND**
+
+* **RGB LED (공통 캐소드 / Common Cathode 기준)**
+  * R (빨강) 핀 $\rightarrow$ 아두이노 디지털 **Pin 3** (각 저항 220Ω~330Ω 연결 필수)
+  * G (초록) 핀 $\rightarrow$ 아두이노 디지털 **Pin 4** (각 저항 연결 필수)
+  * B (파랑) 핀 $\rightarrow$ 아두이노 디지털 **Pin 5** (각 저항 연결 필수)
+  * 공통(-) 핀 $\rightarrow$ **GND**
+
+* **피에조 부저**
+  * (+) 긴 다리 $\rightarrow$ 아두이노 디지털 **Pin 8**
+  * (-) 짧은 다리 $\rightarrow$ **GND**
+---
 ## 💻 [팀 1] 스마트 공기 질 & 온도 알리미 아두이노 스케치 코드
 
 ```cpp
