@@ -40,7 +40,7 @@
     ```
   * **저장소 클론(Clone):** 파워쉘 창에 아래 명령어를 복사하여 붙여넣고 실행(`Enter`)합니다.
     ```powershell
-    git clone [https://github.com/seongui2030/arduino.git](https://github.com/seongui2030/arduino.git)
+    git clone https://github.com/seongui2030/arduino.git
     ```
   * **폴더 진입:** 클론이 완료되면 생성된 `arduino` 폴더로 이동하여 작업을 시작합니다.
     ```powershell
