@@ -32,7 +32,8 @@
 * **🔌 Blink 예제 실행 순서**
   * **아두이노 보드 연결:** 아두이노 우노(Arduino Uno) 보드를 USB 케이블을 통해 컴퓨터의 USB 포트에 연결합니다.
   * **아두이노 IDE 실행 및 포트/보드 설정:**
-    * [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 프로그램을 실행합니다.
+    * [Arduino IDE](https://apps.microsoft.com/detail/9nblggh4rsd8?hl=ko-KR&gl=KR) 에서 [다운로드] 클릭하여 프로그램을 내려받기 합니다.
+    * 다운로드 폴더에서 내려받은 설치 프로그램 파일 ( 'Arduino IDE Installer.exe')로 설치를 진행합니다.
     * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
     * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
   * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
