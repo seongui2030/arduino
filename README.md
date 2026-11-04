@@ -33,6 +33,19 @@
   * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `C:\Users\User\Desktop\Arduino` 폴더 안에 저장됩니다.
 
 * **[git bash](https://git-scm.com/install/windows)** >> "Git for Windows/x64 Setup"
+* **📥 윈도우 파워쉘(PowerShell)을 이용한 Git 클론 방법**
+  * **작업 폴더 이동:** 프로젝트를 저장할 폴더로 이동합니다. (예: 바탕화면으로 이동하려면 아래 명령어 입력)
+    ```powershell
+    cd $HOME\Desktop
+    ```
+  * **저장소 클론(Clone):** 파워쉘 창에 아래 명령어를 복사하여 붙여넣고 실행(`Enter`)합니다.
+    ```powershell
+    git clone [https://github.com/seongui2030/arduino.git](https://github.com/seongui2030/arduino.git)
+    ```
+  * **폴더 진입:** 클론이 완료되면 생성된 `arduino` 폴더로 이동하여 작업을 시작합니다.
+    ```powershell
+    cd arduino
+    ```
 * **[VSCode](https://code.visualstudio.com/docs/setup/windows)** >> "Download the Visual Studio Code User setup for Windows."
 
 ---
