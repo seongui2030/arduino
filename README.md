@@ -404,7 +404,7 @@ flowchart TD
 ```
 
 ---
-
+![시스템 동작 흐름도](./assets/timer.drawio.png)
 ---
 
 ## 📅 3시간 집중 타임테이블
