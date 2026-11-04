@@ -41,8 +41,8 @@
   * **프로그램 검색:** 검색창에 **`Arduino IDE`**를 입력하거나 앱 목록에서 **[Arduino IDE]**를 찾습니다.
   * **실행하기:** **Arduino IDE** 앱 아이콘을 클릭하여 프로그램을 실행합니다.
   * **프로젝트 폴더 열기:** 
-    * 아두이노 IDE가 실행되면 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[폴더 열기 (Open...)]**를 클릭합니다.
-    * 바탕화면 또는 작업 중인 경로에 있는 **`arduino`** 폴더(`C:\Users\User\Desktop\arduino`)를 선택하여 엽니다.
+    * 아두이노 IDE가 실행되면 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[기본 설정...)]**를 클릭합니다.
+    * **스케치북 위치:** **[검색]** 버튼을 눌러 바탕화면에 있는 **`arduino`** 폴더(`C:\Users\User\Desktop\arduino`)를 선택 후 **[확인]** 버튼을 클릭 합니다.
     * 상단 메뉴바에서 **[툴 (Tools)]** $\rightarrow$ **[보드 (Board)]** $\rightarrow$ **[Arduino Uno]**를 선택합니다.
     * **[툴 (Tools)]** $\rightarrow$ **[포트 (Port)]**에서 아두이노가 연결된 포트(`COM?`)를 선택합니다. (장치 관리자의 `[포트(COM & LPT)]`에서 USB 직렬 장치 번호 확인 가능)
   * **Blink 예제 불러오기:** 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[예제 (Examples)]** $\rightarrow$ **[01.Basics]** $\rightarrow$ **[Blink]**를 클릭합니다. 새 창에 기본 코드가 열립니다.
