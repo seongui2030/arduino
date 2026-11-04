@@ -260,6 +260,115 @@ void loop() {
   * 브레드보드 및 점퍼 케이블
 
 ---
+## 🔌 [팀 3] (RTC 연동형) 쉬는 시간 마감 타이머 회로 연결 다이어그램 (핀 배치 가이드)
+
+* **DS3231 RTC 모듈 (I2C 통신)**
+  * VCC $\rightarrow$ **5V**
+  * GND $\rightarrow$ **GND**
+  * SDA $\rightarrow$ 아두이노 아날로그 **SDA** (또는 우노 기준 **A4**)
+  * SCL $\rightarrow$ 아두이노 아날로그 **SCL** (또는 우노 기준 **A5**)
+
+* **1자리 7세그먼트 표시기 (공통 애노드 기준)**
+  * 세그먼트 a ~ g 핀 $\rightarrow$ 아두이노 디지털 **Pin 3 ~ Pin 9** (각 220Ω 저항 연결 필수)
+
+* **피에조 부저**
+  * (+) 긴 다리 $\rightarrow$ 아두이노 디지털 **Pin 11**
+  * (-) 짧은 다리 $\rightarrow$ **GND**
+
+---
+
+## 💻 [팀 3] (RTC 연동형) 이동수업 마감 타이머 아두이노 스케치 코드
+
+```cpp
+// [팀 3] "쉬는 시간 늦지 않아요!" RTC 자동 연동형 마감 타이머 스케치 코드
+// 매시 10분~20분 사이를 자동으로 감지하여 10분(600초) 카운트다운을 수행합니다.
+
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
+
+// 1. 핀 설정
+const int segPins[7] = {3, 4, 5, 6, 7, 8, 9}; // D3 ~ D9: 7세그먼트 a, b, c, d, e, f, g 핀
+const int buzzerPin = 11;                       // D11: 피에조 부저 (+)
+
+// 0부터 9까지의 숫자를 7세그먼트에 표현하기 위한 패턴 (공통 애노드 기준: LOW가 켜짐)
+const byte digitPatterns[10][7] = {
+  {LOW,  LOW,  LOW,  LOW,  LOW,  LOW,  HIGH}, // 0
+  {HIGH, LOW,  LOW,  HIGH, HIGH, HIGH, HIGH}, // 1
+  {LOW,  LOW,  HIGH, LOW,  LOW,  HIGH, LOW},  // 2
+  {LOW,  LOW,  LOW,  LOW,  HIGH, HIGH, LOW},  // 3
+  {HIGH, LOW,  LOW,  HIGH, HIGH, LOW,  LOW},  // 4
+  {LOW,  HIGH, LOW,  LOW,  HIGH, LOW,  LOW},  // 5
+  {LOW,  HIGH, LOW,  LOW,  LOW,  LOW,  LOW},  // 6
+  {LOW,  LOW,  LOW,  HIGH, HIGH, HIGH, HIGH}, // 7
+  {LOW,  LOW,  LOW,  LOW,  LOW,  LOW,  LOW},  // 8
+  {LOW,  LOW,  LOW,  LOW,  HIGH, LOW,  LOW}   // 9
+};
+
+void setup() {
+  for (int i = 0; i < 7; i++) {
+    pinMode(segPins[i], OUTPUT);
+  }
+  pinMode(buzzerPin, OUTPUT);
+  
+  Serial.begin(9600);
+  
+  // RTC 모듈 초기화 확인
+  if (!rtc.begin()) {
+    Serial.println("RTC 모듈을 찾을 수 없습니다!");
+    while (1);
+  }
+
+  // PC와 컴파일 시점의 시간으로 RTC 시간을 최초 설정하려면 아래 주석을 해제하고 업로드 후 다시 주석 처리하세요.
+  // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+}
+
+void loop() {
+  DateTime now = rtc.now();
+  
+  int currentMinute = now.minute();
+  int currentSecond = now.second();
+
+  // 조건: 매시간 10분 정각 ~ 20분 미만 사이인 경우 (쉬는 시간 10분 구간)
+  if (currentMinute >= 10 && currentMinute < 20) {
+    // 20분(쉬는 시간 끝)까지 남은 총 초(Second) 계산
+    int totalRemainingSeconds = (20 * 60) - (currentMinute * 60 + currentSecond);
+    
+    // 남은 분 단위 계산 (예: 10분 남았으면 9분대로 표시 또는 0~9 스케일에 맞춤)
+    int remainingMinutes = totalRemainingSeconds / 60;
+    
+    // 1자리 7세그먼트에 표시할 범위(0~9)로 제한
+    if (remainingMinutes > 9) remainingMinutes = 9;
+    
+    displayNumber(remainingMinutes);
+
+    // 종료 직전(예: 남은 시간이 3분 이하일 때) 경고음
+    if (totalRemainingSeconds <= 180 && totalRemainingSeconds > 0) {
+      if (currentSecond % 2 == 0) { // 2초마다 삐익
+        tone(buzzerPin, 1000, 150);
+      }
+    }
+    // 쉬는 시간 종료 시점 (20분 0초)
+    else if (totalRemainingSeconds <= 0) {
+      tone(buzzerPiun, 1500, 500);
+    }
+  } 
+  else {
+    // 쉬는 시간이 아닐 때 (수업 시간 등): 0 표시 또는 대기 상태
+    displayNumber(0);
+    noTone(buzzerPin);
+  }
+
+  delay(1000); // 1초 주기로 시간 체크
+}
+
+void displayNumber(int num) {
+  for (int i = 0; i < 7; i++) {
+    digitalWrite(segPins[i], digitPatterns[num][i]);
+  }
+}
+```
 ## ⏰ [팀 3] "쉬는 시간 늦지 않아요!" 이동수업 마감 타이머 - 상세 가이드
 - 매시간 10분 종료 ~ 20분 시작 기준 시간 처리 절차, Mermaid 흐름도, 회로 연결 다이어그램, 그리고 아두이노 스케치 코드입니다.
 - 쉬는 시간(10분~20분 사이)의 남은 시간을 계산하는 로직과 RTC(실시간 시계) 모듈 부착 또는 시뮬레이션 방식을 포함
