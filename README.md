@@ -45,9 +45,13 @@
   * **경로 설정:** 경로를 `C:\Users\User\Desktop\Arduino` (또는 폴더를 미리 생성하신 뒤 해당 폴더 경로)로 지정합니다.
   * **저장 및 확인:** 설정 창 우측 하단의 **[확인]** 버튼을 눌러 저장합니다.
   * 이제부터 새로 만들거나 저장하는 아두이노 스케치 파일들은 기본적으로 지정하신 `C:\Users\User\Desktop\Arduino` 폴더 안에 저장됩니다.
-
-
-* **[VSCode](https://code.visualstudio.com/docs/setup/windows)** >> "Download the Visual Studio Code User setup for Windows."
+* **💻 시작 메뉴에서 아두이노 IDE 실행 순서**
+  * **시작 메뉴 열기:** 키보드의 **[Windows (윈도우)]** 키를 누르거나, 화면 아래 작업표시줄에 있는 **[시작(Windows 아이콘)]** 버튼을 클릭합니다.
+  * **프로그램 검색:** 검색창에 **`Arduino IDE`**를 입력하거나 앱 목록에서 **[Arduino IDE]**를 찾습니다.
+  * **실행하기:** **Arduino IDE** 앱 아이콘을 클릭하여 프로그램을 실행합니다.
+  * **프로젝트 폴더 열기:** 
+    * 아두이노 IDE가 실행되면 상단 메뉴바에서 **[파일 (File)]** $\rightarrow$ **[폴더 열기 (Open...)]**를 클릭합니다.
+    * 바탕화면 또는 작업 중인 경로에 있는 **`arduino`** 폴더(`C:\Users\User\Desktop\arduino`)를 선택하여 엽니다.
 
 ---
 
